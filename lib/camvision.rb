@@ -37,6 +37,7 @@ module CamTools
     	if status.exitstatus == 0
     		puts "Command completed successfully [command: %s | args: %s ]" % [command,args]
     	else
+    		puts status.inspect
     		raise CommandFailedError
     	end
 	end
@@ -62,14 +63,29 @@ module CamVision
 			end
 		end
 
+        def demoVideo(opts={})
+        	%w(none negative solarise sketch denoise emboss oilpaint hatch gpen pastel watercolour film blur saturation colourswap washedout posterise colourpoint colourbalance cartoon).each do |effect|
+        		procRunner('/usr/bin/raspivid', Hash[:imxfx => effect, :verbose => ''])
+        	end
+        end
 
         def demoCamera(opts={})
           	procRunner('/usr/bin/raspistill', Hash[:demo => '', :verbose => ''])
         end
 
 		def takePicture(opts={})
-			procRunner(cmd,opts)
+			procRunner('/usr/bin/raspistill', Hash[:timelapse => '1000', :timeout => 25000, :output => "/tmp/single-#{rand(36**12).to_s(36)}-#{Time.now.strftime("at_%I:%M%p")}-%04d.jpg"])
 		end
+
+		def shootVideo()
+			procRunner('/usr/bin/raspivid', Hash[:timelapse => '1000', :timeout => 25000, :output => "/tmp/single-#{rand(36**12).to_s(36)}-#{Time.now.strftime("at_%I:%M%p")}-%04d.jpg"])
+		end
+
+		def initTimeLapse(opts={})
+			procRunner('/usr/bin/raspistill', Hash[:timelapse => '1000', :timeout => 25000, :output => "/tmp/seq-#{rand(36**12).to_s(36)}-#{Time.now.strftime("at_%I:%M%p")}-%04d.jpg"])
+		end
+
+
 	end
 end
 
