@@ -15,6 +15,12 @@ piCamTurret is tested on Rasberry Pi B+ Hardware running 2013+ version of raspbi
 ## Hardware Dependencies
 * [Rasberry B+]('http://www.raspberrypi.org/products/model-b-plus/')
 * [piCam]('http://www.raspberrypi.org/help/camera-module-setup/')
+* [Standard 4.8V - 6V Servo]('http://www.radioshack.com/radioshack-standard-servo/2730766.html#.VNNbpzXRJQs')
+* [piCam Case]('http://www.amazon.com/Raspberry-Pi-Camera-Black-Color/dp/B00F81XRD8')
+* [12 Volt Battery Pack]('http://www.amazon.com/AA-Cell-Double-battery-holder/dp/B0039BVRLI')
+* [Standard Solderless Bread Board]('http://www.gravitech.us/sobr350ptstr.html')
+* [Bread Board Power Supply]('http://tinkersphere.com/power/379-breadboard-power-supply-module-33v-5v-arduino-raspberry-pi-compatible.html')
+* [Female to Male jumper cables]('http://tinkersphere.com/breadboard-perfboard-prototyping/298-male-to-female-jumper-wires-10-pack.html')
 
 ## Software Dependencies
 * Ruby 1.9.x +
