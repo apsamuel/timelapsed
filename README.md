@@ -64,3 +64,16 @@ piCamTurret is tested on Rasberry Pi B+ Hardware running 2013+ version of raspbi
   * rake build
   * /etc/init.d/timelapse (start|stop|restart|status)
   
+### API Examples
+
+#creating a camera object
+  * cam = CamVision::ImageEngine.new('/dev/video0')
+  * cam.demoCamera()
+
+#creating a turret object
+  * turret = CamTurret::MotionEngine.new('/dev/servoblaster', 0)
+  * turret.centerDev()
+  * turret.rotateDev(100)
+  * turret.swingDevRight()
+
+
