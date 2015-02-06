@@ -8,7 +8,7 @@ require 'camvision'
 #TODO: add error handling
 #TODO: standardize cli for ctrl of hardware
 
-module TimeLapseServer < EM::Connection
+module TimeLapseServer 
 	@@cam = nil
 	@@turret = nil
 	#include Mod(s)
@@ -21,8 +21,8 @@ module TimeLapseServer < EM::Connection
   			while /config_camera/
   				send_data("Configuring Camera!!")
   				@@turret = CamTurret::MotionEngine.new('/dev/servoblaster', 0)
-                @@cam = CamVision::ImageEngine.new('/dev/video0')
-                send_data("Configured camera and turret objects!! #{@@cam} #{@@turret}")
+                		@@cam = CamVision::ImageEngine.new('/dev/video0')
+                		send_data("Configured camera and turret objects!! #{@@cam} #{@@turret}")
   			while /take_picture/
   				send_data("Taking Picture!!")
   				@@cam.takePicture
