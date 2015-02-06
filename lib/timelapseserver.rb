@@ -19,10 +19,11 @@ module TimeLapseServer
   	def receive_data(data)
   		case data
   			when /config_camera/
+          send_data ">>>you sent: #{data}"
   				send_data("Configuring Camera!!")
   				@@turret = CamTurret::MotionEngine.new('/dev/servoblaster', 0)
-                		@@cam = CamVision::ImageEngine.new('/dev/video0')
-                		send_data("Configured camera and turret objects!! #{@@cam} #{@@turret}")
+          @@cam = CamVision::ImageEngine.new('/dev/video0')
+          send_data("Configured camera and turret objects!! #{@@cam} #{@@turret}")
   			when /take_picture/
   				send_data("Taking Picture!!")
   				@@cam.takePicture
