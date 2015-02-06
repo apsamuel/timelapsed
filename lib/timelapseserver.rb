@@ -38,7 +38,7 @@ module TimeLapse
           send_data("Time Lapse Complete!!\n")
         when /demo_camera/
           send_data("Running Demo!!\n")
-          @@cam.demoCamera
+          @@cam.demoVideo
       end
     end
   end
