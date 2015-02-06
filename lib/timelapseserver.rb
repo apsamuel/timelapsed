@@ -37,9 +37,8 @@ module TimeLapse
           @@cam.initTimeLapse
           send_data("Time Lapse Complete!!\n")
         when /demo_camera/
-          send_data("Running Time Lapse!!\n")
+          send_data("Running Demo!!\n")
           @@cam.demoCamera
-          send_data("Time Lapse Complete!!\n")
       end
     end
   end
