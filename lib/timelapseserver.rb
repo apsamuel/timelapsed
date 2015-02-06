@@ -1,4 +1,7 @@
+$:.unshift "../lib" unless $:.include?("../lib")
 require 'eventmachine'
+require 'camturret'  
+require 'camvision'
 
 #filler code...
 #TODO: add argument handling

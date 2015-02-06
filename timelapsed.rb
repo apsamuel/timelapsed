@@ -1,5 +1,6 @@
 $:.unshift "./lib" unless $:.include?("./lib")
 require "eventmachine"
+require "timelapseserver"
 
 
 include TimeLapseServer
