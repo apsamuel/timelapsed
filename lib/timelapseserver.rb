@@ -10,6 +10,12 @@ require 'camvision'
 
 
 module TimeLapse
+
+CENTER=55
+BACK_FROM_FRONT=215
+LEFT_FROM_FRONT=125
+FAR_LEFT_FROM_FRONT=250
+
   class Server < EM::Connection 
     @@cam = nil
     @@turret = nil
@@ -39,6 +45,22 @@ module TimeLapse
         when /demo_camera/
           send_data("Running Demo!!\n")
           @@cam.demoVideo
+        when /center_dev/
+	  send_data("Centering Device!!\n")
+          @@turret.centerDev
+          send_data("Moved to center!!\n")
+        when /rotate_dev_back/
+          send_data("Rotating device!!\n")
+	  @@turret.rotateDev(TimeLapse::BACK_FROM_FRONT)
+          send_data("Done rotating!!\n")
+        when /rotate_dev_left/
+          send_data("Rotating device!!\n")
+	  @@turret.rotateDev(TimeLapse::LEFT_FROM_BACK)
+          send_data("Done rotating!!\n")
+        when /rotate_dev_left_far/
+          send_data("Rotating device!!\n")
+          @@turret.rotateDev(TimeLapse::FAR_LEFT_FROM_FRONT)
+          send_data("Done rotating!!\n")
       end
     end
   end
