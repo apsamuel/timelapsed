@@ -55,7 +55,7 @@ FAR_LEFT_FROM_FRONT=250
           send_data("Done rotating!!\n")
         when /rotate_dev_left/
           send_data("Rotating device!!\n")
-	  @@turret.rotateDev(TimeLapse::LEFT_FROM_BACK)
+	  @@turret.rotateDev(TimeLapse::LEFT_FROM_FRONT)
           send_data("Done rotating!!\n")
         when /rotate_dev_left_far/
           send_data("Rotating device!!\n")
