@@ -1,0 +1,49 @@
+
+#ServoBlaster
+http://raspiprojects.com/install-servoblaster-raspberry-pi-control-servo-python.html
+
+
+#
+http://opencv.org/
+
+
+
+## Update the OS & firmware for the rasberry pi
+
+# Get the latest Raspbian packages
+- sudo apt-get update
+- sudo apt-get upgrade
+
+# Get the latest firmware
+- sudo rpi-update
+
+# Install some packages needed to build it (optional, only if you need to build v4l-tools for some reason)
+- sudo apt-get install autoconf gettext libtool libjpeg62-dev
+
+# Install v4l-tools from package repos
+- sudo apt-get install v4l-tools
+
+# Enable the v4l video driver. (you may need to reboot to apply the above changes before this works)
+sudo modprobe bcm2835-v4l2
+
+
+## Build Open CV
+
+# Download and install dependencies
+- sudo apt-get -y install build-essential cmake cmake-qt-gui pkg-config libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libtiff4-dev libtiff4 libtiffxx0c2 libtiff-tools
+- sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev libdc1394-22-dev libdc1394-22 libdc1394-utils swig libv4l-0 libv4l-dev python-numpy libpython2.6 python-dev python2.6-dev libgtk2.0-dev pkg-config
+
+# Download & Extract Open CV source code 
+- wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.3.1/OpenCV-2.3.1a.tar.bz2
+- tar -xvjpf OpenCV-2.3.1a.tar.bz2
+- rm OpenCV-2.3.1a.tar.bz2
+
+# Build OpenCV from source
+- cd OpenCV-2.3.1/
+- mkdir build
+- cd build
+- cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ..
+- make
+- sudo make install
+
+
