@@ -1,11 +1,120 @@
 
- <a href="http://127.0.0.1:4567/test">Hello World</a> 
- <a href="http://127.0.0.1:4567/config_cam">Config Objects</a> 
- <a href="http://127.0.0.1:4567/take_picture">Take Pic</a> 
- <a href="http://127.0.0.1:4567/shoot_video">Shoot Video</a> 
- <a href="http://127.0.0.1:4567/init_time_lapse">Time Lapse</a> 
- <a href="http://127.0.0.1:4567/center_dev">Turn Center</a> 
- <a href="http://127.0.0.1:4567/rotate_dev_left">Turn Left</a>  
- <a href="http://127.0.0.1:4567/rotate_dev_left_far">Turn Far Left</a> 
- <a href="http://127.0.0.1:4567/demo_camera">Demo Cam</a>
+<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
 
+
+
+<style>
+body {
+  font-family: 'Corben', Georgia, Times, serif;
+  font-size: 48px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align: center
+}
+p, div {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+a {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+#appDiv {
+  text-align: center;
+  margin-bottom: 0.0em;
+  display: block;
+  box-shadow: 10px 10px 5px #888888;
+  width: 300px; 
+  margin-left: auto; 
+  margin-left: auto;
+  margin: auto;
+  border: 1px solid #ccc; 
+}
+
+#contentDiv {
+  text-align: center;
+  margin-bottom: 0.0em;
+  border: 1px solid #ccc;
+  margin: auto;
+  width: 300px;
+  margin-bottom: 2.2em;
+  margin-top: 2.2em;
+}
+
+#headerDiv {
+  text-align: center;
+  margin-bottom: 2.2em; 
+}
+
+#logoDiv {
+  background-image: url('piTurretCam.png');
+  margin: 0 auto; 
+  width: 100%;
+  height: 417px;
+  box-shadow: 10px 10px 5px #888888;
+  margin-bottom: 0.2em;
+}
+
+.friendlyButton {
+  background-image: -moz-linear-gradient(top, #ffffff, #dbdbdb);
+  background-image: -webkit-gradient(linear,left top,left bottom,
+    color-stop(0, #ffffff),color-stop(1, #dbdbdb));
+  filter: progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#ffffff', EndColorStr='#dbdbdb');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient
+    (startColorStr='#ffffff', EndColorStr='#dbdbdb')";
+  border: 1px solid #fff;
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: #fff 0 1px 0;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: block;
+  color: #597390;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div id='headerDiv' class='headerDiv' >
+  <h1>PiTurretCam</h1>
+  <div id='logoDiv'>
+  </div>
+</div>
+
+
+
+<div id='appDiv'>
+ <a href="http://192.168.1.153:4567/test" class="friendlyButton" target="contentpane">Hello World</a> 
+ <a href="http://192.168.1.153:4567/config_cam" class="friendlyButton" target="contentpane">Config Objects</a> 
+ <a href="http://192.168.1.153:4567/take_picture" class="friendlyButton" target="contentpane">Take Pic</a> 
+ <a href="http://192.168.1.153:4567/shoot_video" class="friendlyButton" target="contentpane">Shoot Video</a> 
+ <a href="http://192.168.1.153:4567/init_time_lapse" class="friendlyButton" target="contentpane">Time Lapse</a> 
+ <a href="http://192.168.1.153:4567/center_dev" class="friendlyButton" target="contentpane">Turn Center</a> 
+ <a href="http://192.168.1.153:4567/rotate_dev_left" class="friendlyButton" target="contentpane">Turn Left</a>  
+ <a href="http://192.168.1.153:4567/rotate_dev_left_far" class="friendlyButton" target="contentpane">Turn Far Left</a> 
+ <a href="http://192.168.1.153:4567/demo_camera" class="friendlyButton" target="contentpane">Demo Cam</a>
+</div>
+
+
+<div id='contentDiv'>
+<iframe name="contentpane" src="" width="100%" height="100%" frameBorder="0"></iframe>
+</div>
+
+</body>

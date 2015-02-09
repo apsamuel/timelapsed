@@ -3,6 +3,7 @@ require "sinatra"
 require "socket"
 
 set :public_folder, File.dirname(__FILE__) + '/static'
+set :bind, '0.0.0.0'
 
 get "/test" do
   "Hello!!!"
@@ -13,55 +14,112 @@ get "/index" do
 end
 
 get "/config_cam" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("config_camera")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("config_camera")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 
 get "/demo_camera" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("demo_camera")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("demo_camera")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 
 get "/take_picture" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("take_picture")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("take_picture")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/shoot_video" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("shoot_video")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("shoot_video")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/init_time_lapse" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("shoot_video")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("shoot_video")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/center_dev" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("center_dev")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("center_dev")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/rotate_dev_back" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("rotate_dev_back")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("rotate_dev_back")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/rotate_dev_left" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("rotate_dev_left")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("rotate_dev_left")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
 
 get "/rotate_dev_left_far" do
-  s = TCPSocket.new "192.168.1.194", 9999
-  s.puts("rotate_dev_left_far")
+  begin
+    s = TCPSocket.new "192.168.1.194", 9999
+    s.puts("rotate_dev_left_far")
+    msg = s.gets
+    s.close
+    msg
+  rescue Errno::ECONNREFUSED => e
+    "Please make sure the timelapserver is running on port 9999..."
+  end
 end
-
-
-
-
-
-
 
